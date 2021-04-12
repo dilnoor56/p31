@@ -10,6 +10,9 @@ class Particle{
     }
     display(){
         var pos = this.body.position;
+        if(pos.y>680){
+            Matter.Body.setStatic(this.body, true)
+        }
         var angle = this.body.angle;
         
         push();

@@ -9,9 +9,10 @@ var divisions = [];
 var divisionHeight = 300;
 var score = 0;
 var backgroundIMG;
- 
+var ground_down
+
 function preload(){
-;
+
 
 }
 
@@ -21,6 +22,7 @@ function setup() {
  engine = Engine.create();
  world = engine.world;
  ground = new Ground(width/2, height, width, 20)
+
  
  for (var k = 0; k <=width; k = k + 80){
    divisions.push(new Divisions(k, height-divisionHeight/2,10, divisionHeight))
@@ -50,6 +52,7 @@ function draw() {
   stroke("yellow")
 
   background(0);
+  //noStroke()
  
   Engine.update(engine);
   for (var i = 0; i<divisions.length; i++){
@@ -68,6 +71,8 @@ function draw() {
   for (var i = 0; i<particles.length; i++){
     particles[i].display();
   }
+  
   ground.display();
+
   
 }
